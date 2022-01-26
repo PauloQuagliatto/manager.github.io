@@ -9,7 +9,7 @@ import { GlobalContext } from "../../src/context/GlobalContext";
 import Container from "./styles";
 import SpinnerModal from "../../src/components/SpinnerModal";
 
-const Login = ({ auth }: any) => {
+const Login = () => {
   const global = useContext(GlobalContext);
 
   const [isDesktop, setIsDesktop] = useState<boolean>(false);
@@ -95,13 +95,5 @@ const Login = ({ auth }: any) => {
     </>
   );
 };
-
-export async function getStaticProps() {
-  const auth = process.env.SERVER_TOKEN;
-
-  return {
-    props: { auth },
-  };
-}
 
 export default Login;
